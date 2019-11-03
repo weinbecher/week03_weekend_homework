@@ -33,6 +33,12 @@ class Film
     return Customer.map_items(customer_data)
   end
 
+# Check how many customers are going to watch a certain film
+
+  def customer_count()
+    customers = self.customer()
+    customers.count
+  end
 
 
   def delete()

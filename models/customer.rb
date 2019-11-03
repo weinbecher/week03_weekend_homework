@@ -35,6 +35,22 @@ class Customer
   end
 
 
+
+#  Buying tickets should decrease the funds of the customer by the price
+
+  def buy_ticket
+    films = self.film()
+    film_price = films.map{|film| film.price}
+    combined_film_price = film_price.sum
+    return @funds - combined_film_price
+  end
+
+# Check how many tickets were bought by a customer
+  def ticket_count
+    films = self.film()
+    films.count
+  end
+
   def delete()
     sql = "DELETE FROM customers WHERE id = $1"
     values = [@id]

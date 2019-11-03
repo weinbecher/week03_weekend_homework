@@ -21,6 +21,14 @@ customer2 = Customer.new({
 
 customer2.save
 
+
+customer3 = Customer.new({
+  'name' => 'Audrey',
+  'funds' => 20
+  })
+
+customer3.save
+
 film1 = Film.new({
   'title' => 'Blade Runner 3039',
   'price' => 9
@@ -47,6 +55,20 @@ ticket2 = Ticket.new({
   'film_id' => film2.id })
 
 ticket2.save
+
+
+ticket3 = Ticket.new({
+  'customer_id' => customer1.id,
+  'film_id' => film2.id })
+
+ticket3.save
+
+
+ticket4 = Ticket.new({
+  'customer_id' => customer3.id,
+  'film_id' => film2.id })
+
+ticket4.save
 
 
 binding.pry
